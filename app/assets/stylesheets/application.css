@@ -13,8 +13,106 @@
  *= require_tree .
  *= require_self
  */
+body {
+  background: #444444;
+}
 
- ul {
+h1 {
+  color: #EDEDED;
+  margin-bottom: 2rem;
+}
+
+h5 {
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  margin: 0;
+}
+
+ul {
   padding: 0;
   list-style-type: none;
- }
+}
+
+.actions-container {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.task-button {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 50px;
+  color: #EDEDED;
+  background: #DA0037;
+}
+
+.task-button:hover {
+  background: #9c0228;
+}
+
+.card {
+  padding: 1rem;
+  position: relative;
+  background: #EDEDED;
+  color:#171717;
+}
+
+.card .link {
+  z-index: 3;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+
+.card h5 {
+  width: 85%;
+}
+
+.card .delete-icon {
+  z-index: 5;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #BBBBBB;
+}
+
+.card .delete-icon:hover {
+  color: #DA0037;
+}
+
+.card.disabled {
+  opacity: 65%;
+}
+
+.card.disabled:hover {
+  cursor: default !important;
+}
+
+.card .task-status-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  color: #EDEDED;
+  height: 24px;
+  width: 24px;
+}
+
+.task-status-icon.green {
+  background-color: #38E54D;
+}
+
+.task-status-icon.red {
+  background-color: #DA0037;
+}

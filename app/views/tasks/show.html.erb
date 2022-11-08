@@ -1,19 +1,31 @@
 <div class="container">
   <div class="row">
-    <div class="col-12 d-flex justify-content-between">
-      <div>
-        <h1><%= @task.title %></h1>
+    <div class="col-12">
+      <h1>Task Information</h1>
+      <div class="card">
+        <h5><%= @task.title %></h5>
         <p><%= @task.details %></p>
-        <div class="form-check form-switch">
-          <input class="form-check-input" type="checkbox" role="switch" id="taskStatus" disabled <%= @task.completed ? 'checked' : 'unchecked' %>>
-          <label class="form-check-label" for="taskStatus">Task completed</label>
+        <div class="task-status-icon rounded-circle d-flex align-items-center justify-content-center <%= @task.completed ? 'green' : 'red' %>">
+          <% if @task.completed %>
+            <i class="fa-solid fa-check"></i>
+          <% else %>
+            <i class="fa-solid fa-xmark"></i>
+          <% end %>
         </div>
       </div>
+    </div>
 
-      <small><%= link_to 'edit that shit', edit_task_path, class: 'btn btn-primary' %></small>
-      </div>
-    <div class="col-12">
-      <small><%= link_to 'back to list', tasks_path %></small>
+    <div class="actions-container py-4 d-flex justify-content-center">
+      <%= link_to tasks_path do %>
+        <div id="back-button" class="task-button rounded-circle d-flex align-items-center justify-content-center mx-2">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+      <% end %>
+      <%= link_to edit_task_path do %>
+        <div id="edit-task" class="task-button rounded-circle d-flex align-items-center justify-content-center mx-2">
+          <i class="fa-solid fa-pen"></i>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
