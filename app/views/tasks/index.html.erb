@@ -4,8 +4,8 @@
       <h1>Tasks</h1>
       <div id="tasks-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         <% @tasks.each do |task| %>
-          <div class="col <%= task.completed ? 'order-2' : '' %>">
-            <div class="card <%= task.completed ? 'disabled' : '' %>">
+          <div class="col<%= task.completed ? ' order-3' : '' %>">
+            <div class="card home<%= task.completed ? ' disabled' : '' %>">
               <div>
                 <h5><%= task.title %></h5>
                 <p><%= task.details %></p>
@@ -17,8 +17,9 @@
             </div>
           </div>
         <% end %>
-      </div>
-      <div class="actions-container py-4">
+        <div id="divider" class="order-2"></div>
+      </>
+      <div class="actions-container py-4 d-flex justify-content-center">
           <%= link_to new_task_path do %>
             <div id="add-task" class="task-button rounded-circle d-flex align-items-center justify-content-center">
               <i class="fa-solid fa-plus"></i>

@@ -32,11 +32,16 @@ a {
 
 p {
   margin: 0;
+  color: #EDEDED;
 }
 
 ul {
   padding: 0;
   list-style-type: none;
+}
+
+#divider {
+  width: 100% !important;
 }
 
 .actions-container {
@@ -58,13 +63,20 @@ ul {
 
 .task-button:hover {
   background: #9c0228;
+  box-shadow: 1px 2px 8px rgba(23, 23, 23, 40%);
 }
 
 .card {
   padding: 1rem;
   position: relative;
   background: #EDEDED;
-  color:#171717;
+  box-shadow: 1px 2px 8px rgba(23, 23, 23, 40%);
+  transition: scale ease-in-out .3s;
+}
+
+.card.home:hover {
+  box-shadow: 1px 2px 8px rgba(23, 23, 23, 60%);
+  scale: 1.075;
 }
 
 .card .link {
@@ -74,6 +86,9 @@ ul {
   bottom: 0;
   left: 0;
   width: 100%;
+}
+.card p {
+  color:#171717;
 }
 
 .card h5 {
@@ -115,4 +130,17 @@ ul {
 
 .task-status-icon.red {
   background-color: #DA0037;
+}
+
+.form-button {
+  float: right;
+  padding: .75rem 1.5rem;
+  background-color: #DA0037;
+  color: #EDEDED;
+  border: none;
+  border-radius: 50px;
+}
+
+.form-button:hover {
+  background-color: #9c0228;
 }

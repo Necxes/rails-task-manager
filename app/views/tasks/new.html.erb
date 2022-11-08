@@ -1,10 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-    <h1>Add a new task</h1>
-    <p>Please give a title and a detailed information about what your task is about.</p>
-    <%= render 'form' %>
-    <small><%= link_to 'back to list', tasks_path %></small>
+      <h1>Add a new task</h1>
+      <div class="card">
+        <%= render 'form' %>
+      </div>
+    </div>
+
+    <div class="actions-container py-4 d-flex justify-content-center">
+      <%= link_to tasks_path do %>
+        <div id="back-button" class="task-button rounded-circle d-flex align-items-center justify-content-center mx-2">
+          <i class="fa-solid fa-arrow-left"></i>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
