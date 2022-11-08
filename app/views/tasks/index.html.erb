@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    <h1>Tasks</h1>
+    <div id="tasks-container">
+      <ul>
+        <% @tasks.each do |task| %>
+          <li>
+            <%= link_to task.title, task_path(task) %>
+            <%= link_to task_path(task), data: { turbo_method: 'delete', turbo_confirm: "Delete #{task.title}?" }, class: 'btn btn-light' do %>
+              <i class="fa-solid fa-trash"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+    <div class="add-tasks border-top border-secondary py-4">
+      <%= link_to 'add a new task', new_task_path, class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>
